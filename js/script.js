@@ -1,9 +1,9 @@
 /* ===== DATA ===== */
 const products = [
   { id:1, name:'Dark Chocolate Excellence', desc:'Cokelat hitam premium 70% kakao dari perkebunan Jawa Timur. Rasa bold dengan sentuhan buah dan rempah khas Indonesia.', price:'Rp 85.000', img:'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=300&q=80', details:['70% Kakao Premium','Tanpa pengawet','Dari petani Jawa Timur','Rasa bold & kompleks','Kemasan eksklusif'] },
-  { id:2, name:'Milk Chocolate Velvet', desc:'Cokelat susu lembut dengan perpaduan kakao pilihan dan susu segar. Tekstur creamy dan rasa manis yang seimbang.', price:'Rp 75.000', img:'https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=300&q=80', details:['34% Kakao & Susu Premium','Tekstur creamy','Rasa manis seimbang','Cocok untuk semua usia','Kemasan elegan'] },
-  { id:3, name:'Cocoa Powder Premium', desc:'Bubuk kakao murni tanpa gula tambahan. Cocok untuk minuman cokelat, kue, dan kreasi kuliner premium.', price:'Rp 95.000', img:'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80', details:['100% Kakao Murni','Tanpa gula tambahan','Kaya antioksidan','Serbaguna untuk masak & minum','Kemasan airtight premium'] },
-  { id:4, name:'Artisan Chocolate', desc:'Koleksi cokelat artisan dengan varian rasa Nusantara: Pala, Kayu Manis, Kelapa, dan Cabe Rawit. Pengalaman rasa unik.', price:'Rp 125.000', img:'https://images.unsplash.com/photo-1606313562750-1b71db1e2b2b?w=300&q=80', details:['Varian rasa Nusantara','Bahan alami pilihan','Produksi terbatas','Kreasi artisan','Bingkai hadiah premium'] }
+  { id:2, name:'Milk Chocolate Velvet', desc:'Cokelat susu lembut dengan perpaduan kakao pilihan dan susu segar. Tekstur creamy dan rasa manis yang seimbang.', price:'Rp 75.000', img:'images/milk-chocholate-velvet.png', details:['34% Kakao & Susu Premium','Tekstur creamy','Rasa manis seimbang','Cocok untuk semua usia','Kemasan elegan'] },
+  { id:3, name:'Cocoa Powder Premium', desc:'Bubuk kakao murni tanpa gula tambahan. Cocok untuk minuman cokelat, kue, dan kreasi kuliner premium.', price:'Rp 95.000', img:'images/cocoa-powder-premium.png', details:['100% Kakao Murni','Tanpa gula tambahan','Kaya antioksidan','Serbaguna untuk masak & minum','Kemasan airtight premium'] },
+  { id:4, name:'Artisan Chocolate', desc:'Koleksi cokelat artisan dengan varian rasa Nusantara: Pala, Kayu Manis, Kelapa, dan Cabe Rawit. Pengalaman rasa unik.', price:'Rp 125.000', img:'images/artisan-chocolate.png', details:['Varian rasa Nusantara','Bahan alami pilihan','Produksi terbatas','Kreasi artisan','Bingkai hadiah premium'] }
 ];
 
 const timelineData = [
@@ -102,7 +102,7 @@ themeToggle.addEventListener('click', (e) => {
 /* ===== LOADING + INIT ===== */
 document.body.classList.add('loading');
 setTimeout(() => {
-  loadingScreen.classList.add('loaded');
+  if (loadingScreen) loadingScreen.classList.add('loaded');
   document.body.classList.remove('loading');
 
   locoScroll = new LocomotiveScroll({
@@ -136,6 +136,8 @@ setTimeout(() => {
   observeTimeline();
 
   ScrollTrigger.refresh();
+  renderProducts();
+  setTimeout(() => locoScroll.update(), 300);
 }, 2200);
 
 /* ===== LOCOMOTIVE SCROLL HANDLER ===== */
@@ -443,7 +445,23 @@ function initCharts() {
 }
 
 /* ===== INIT ===== */
-renderProducts();
+// renderProducts();
+// setTimeout(() => {
+//   if (locoScroll) locoScroll.update();
+// }, 300);
 renderTimeline();
 renderTestimonials();
 renderFAQ();
+
+
+// PAGE TRANSITION
+document.querySelectorAll('.nav-to-produk, #btn-explore-all').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    const overlay = document.getElementById('page-transition');
+    overlay.classList.add('show');
+    setTimeout(() => {
+      window.location.href = 'produk.html';
+    }, 700);
+  });
+});

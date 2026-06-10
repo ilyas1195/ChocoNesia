@@ -14,13 +14,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="logo/cocoa-icon-fix-fix.png">
 </head>
 
 <body>
   <!-- LOADING SCREEN -->
   <div id="loading-screen">
     <div class="loader-bean">
-      <i class="fas fa-seedling"></i>
+      <!-- <i class="fas fa-seedling"></i> -->
+       <img src="images/cocoa-removebg.png" alt="">
     </div>
     <p class="loader-text">ChocoNesia</p>
     <div class="loader-bar">
@@ -36,7 +38,7 @@
       </a>
       <ul id="nav-menu" class="nav-menu">
         <li><a href="#hero" class="nav-link">Beranda</a></li>
-        <li><a href="#products" class="nav-link">Produk</a></li>
+        <li><a href="produk.html" class="nav-link nav-to-produk">Produk</a></li>
         <li><a href="#about" class="nav-link">Tentang</a></li>
         <li><a href="#timeline" class="nav-link">Proses</a></li>
         <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
@@ -101,6 +103,12 @@
           <p>Setiap produk dibuat dari kakao pilihan petani Indonesia dengan standar kualitas internasional.</p>
         </div>
         <div id="products-grid" class="products-grid"></div>
+        <div class="explore-btn-wrapper">
+          <a href="produk.html" class="btn-explore-all" id="btn-explore-all">
+            <span>Jelajahi Semua Produk</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -291,6 +299,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="js/script.js"></script>
+
+  <div class="page-transition" id="page-transition"></div>
 </body>
 
 </html>
