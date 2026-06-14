@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="id" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,11 @@
   <link rel="icon" href="logo/cocoa-icon-fix-fix.png">
 </head>
 <body>
+  <!-- SKIP TO MAIN -->
+  <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
   <!-- NAVBAR -->
+  <header>
   <nav id="navbar">
     <div class="nav-inner container">
       <a href="index.html" class="nav-logo">
@@ -35,34 +39,37 @@
       </div>
     </div>
   </nav>
+  </header>
 
   <div id="scroll-bar" class="scroll-bar"></div>
-  <div data-scroll-container id="scroll-container">
+  <main data-scroll-container id="main-content" class="scroll-container">
 
     <!-- HERO -->
-    <div class="produk-hero">
+    <section class="produk-hero">
       <span class="produk-hero-badge"><i class="fas fa-crown"></i> Koleksi Premium</span>
       <h1>Produk <span>ChocoNesia</span></h1>
       <p>Setiap produk dibuat dari kakao pilihan petani Indonesia dengan standar kualitas internasional.</p>
-    </div>
+    </section>
 
     <!-- TOOLBAR -->
-    <div class="produk-toolbar">
+    <nav class="produk-toolbar" aria-label="Filter dan urutkan produk">
       <div class="container">
         <div class="toolbar-inner">
           <div class="search-box">
             <i class="fas fa-search"></i>
+            <label for="search-input" class="sr-only">Cari produk</label>
             <input type="text" id="search-input" placeholder="Cari produk...">
           </div>
-          <div class="filter-tabs" id="filter-tabs">
-            <button class="filter-btn active" data-cat="semua">Semua</button>
-            <button class="filter-btn" data-cat="dark">Dark Chocolate</button>
-            <button class="filter-btn" data-cat="milk">Milk & White</button>
-            <button class="filter-btn" data-cat="powder">Cocoa Powder</button>
-            <button class="filter-btn" data-cat="artisan">Artisan</button>
+          <div class="filter-tabs" id="filter-tabs" role="group" aria-label="Filter kategori">
+            <button class="filter-btn active" data-cat="semua" aria-pressed="true">Semua</button>
+            <button class="filter-btn" data-cat="dark" aria-pressed="false">Dark Chocolate</button>
+            <button class="filter-btn" data-cat="milk" aria-pressed="false">Milk & White</button>
+            <button class="filter-btn" data-cat="powder" aria-pressed="false">Cocoa Powder</button>
+            <button class="filter-btn" data-cat="artisan" aria-pressed="false">Artisan</button>
           </div>
           <div class="sort-wrapper">
             <i class="fas fa-arrow-down-wide-short"></i>
+            <label for="sort-select" class="sr-only">Urutkan produk</label>
             <select class="sort-select" id="sort-select">
               <option value="default">Urutan Default</option>
               <option value="price-asc">Harga: Termurah</option>
@@ -73,11 +80,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </nav>
 
     <!-- PRODUK GRID -->
-    <section class="produk-section">
+    <section class="produk-section" aria-label="Daftar produk">
       <div class="container">
+        <h2 class="sr-only">Semua Produk ChocoNesia</h2>
         <div id="produk-grid" class="products-grid"></div>
       </div>
     </section>
@@ -96,28 +104,29 @@
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Navigasi">
           <h4>Navigasi</h4>
           <a href="index.html#hero">Beranda</a>
           <a href="produk.html">Produk</a>
           <a href="tentang.html">Tentang</a>
           <a href="proses.html">Proses</a>
           <a href="index.html#contact">Kontak</a>
-        </div>
-        <div class="footer-links">
+        </nav>
+        <nav class="footer-links" aria-label="Layanan">
           <h4>Layanan</h4>
           <a href="#">Pemesanan</a>
           <a href="#">Pengiriman</a>
           <a href="#">Retur</a>
           <a href="#">Mitra Petani</a>
-        </div>
+        </nav>
         <div class="footer-newsletter">
           <h4>Newsletter</h4>
           <p>Dapatkan info terbaru tentang produk dan inovasi kakao.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Email Anda">
-            <button><i class="fas fa-arrow-right"></i></button>
-          </div>
+          <form class="newsletter-form">
+            <label for="newsletter-email" class="sr-only">Email untuk newsletter</label>
+            <input type="email" id="newsletter-email" placeholder="Email Anda" aria-required="true">
+            <button type="submit" aria-label="Berlangganan"><i class="fas fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
@@ -125,16 +134,16 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- PRODUCT MODAL -->
-  <div id="product-modal" class="modal">
+  <dialog id="product-modal" class="modal" aria-modal="true" aria-labelledby="modal-heading">
     <div class="modal-overlay"></div>
     <div class="modal-content">
-      <button id="modal-close" class="modal-close"><i class="fas fa-times"></i></button>
+      <button id="modal-close" class="modal-close" aria-label="Tutup modal"><i class="fas fa-times"></i></button>
       <div id="modal-body"></div>
     </div>
-  </div>
+  </dialog>
 
   <!-- BACK TO TOP -->
   <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>

@@ -13,7 +13,11 @@
   <link rel="icon" href="logo/cocoa-icon-fix-fix.png">
 </head>
 <body>
+  <!-- SKIP TO MAIN -->
+  <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
   <!-- NAVBAR -->
+  <header>
   <nav id="navbar">
     <div class="nav-inner container">
       <a href="index.html" class="nav-logo">
@@ -35,16 +39,17 @@
       </div>
     </div>
   </nav>
+  </header>
   <div id="scroll-bar" class="scroll-bar"></div>
 
-  <div data-scroll-container id="scroll-container">
+  <main data-scroll-container id="main-content" class="scroll-container">
 
     <!-- HERO -->
-    <div class="produk-hero">
+    <section class="produk-hero">
       <span class="produk-hero-badge"><i class="fas fa-tree"></i> Perjalanan Kakao</span>
       <h1>Dari Kebun <span>Ke Layar</span></h1>
       <p>Setiap batang cokelat ChocoNesia lahir dari proses panjang yang menghubungkan petani, teknologi, dan cita rasa Nusantara.</p>
-    </div>
+    </section>
 
     <!-- PROSES TIMELINE -->
     <section class="section proses-section">
@@ -54,9 +59,10 @@
           <h2>Bagaimana Kakao Menjadi Produk ChocoNesia?</h2>
           <p>Dari biji yang ditanam petani mandiri hingga sampai ke tangan konsumen — berikut adalah setiap langkah yang kami lalui dengan penuh dedikasi.</p>
         </div>
-        <div class="proses-timeline">
+        <ol class="proses-timeline">
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">01</div>
             <div class="proses-icon"><i class="fas fa-seedling"></i></div>
             <div class="proses-body">
@@ -68,9 +74,11 @@
                 <span>Naungan alami</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">02</div>
             <div class="proses-icon"><i class="fas fa-hand-holding-heart"></i></div>
             <div class="proses-body">
@@ -82,9 +90,11 @@
                 <span>Pendampingan digital</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">03</div>
             <div class="proses-icon"><i class="fas fa-leaf"></i></div>
             <div class="proses-body">
@@ -96,9 +106,11 @@
                 <span>Setiap 7–10 hari</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">04</div>
             <div class="proses-icon"><i class="fas fa-flask"></i></div>
             <div class="proses-body">
@@ -110,9 +122,11 @@
                 <span>Pantau suhu</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">05</div>
             <div class="proses-icon"><i class="fas fa-sun"></i></div>
             <div class="proses-body">
@@ -124,9 +138,11 @@
                 <span>Grade A</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">06</div>
             <div class="proses-icon"><i class="fas fa-clipboard-check"></i></div>
             <div class="proses-body">
@@ -138,9 +154,11 @@
                 <span>Traceability</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">07</div>
             <div class="proses-icon"><i class="fas fa-industry"></i></div>
             <div class="proses-body">
@@ -152,9 +170,11 @@
                 <span>Resep artisan</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">08</div>
             <div class="proses-icon"><i class="fas fa-upload"></i></div>
             <div class="proses-body">
@@ -166,9 +186,11 @@
                 <span>Flavor profile</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">09</div>
             <div class="proses-icon"><i class="fas fa-bullhorn"></i></div>
             <div class="proses-body">
@@ -180,9 +202,11 @@
                 <span>Dashboard mitra</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-          <div class="proses-card">
+          <li>
+          <article class="proses-card">
             <div class="proses-num">10</div>
             <div class="proses-icon"><i class="fas fa-truck"></i></div>
             <div class="proses-body">
@@ -194,9 +218,10 @@
                 <span>Lacak real-time</span>
               </div>
             </div>
-          </div>
+          </article>
+          </li>
 
-        </div>
+        </ol>
       </div>
     </section>
 
@@ -214,28 +239,29 @@
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Navigasi">
           <h4>Navigasi</h4>
           <a href="index.html#hero">Beranda</a>
           <a href="produk.html">Produk</a>
           <a href="tentang.html">Tentang</a>
           <a href="proses.html">Proses</a>
           <a href="index.html#faq">FAQ</a>
-        </div>
-        <div class="footer-links">
+        </nav>
+        <nav class="footer-links" aria-label="Layanan">
           <h4>Layanan</h4>
           <a href="#">Pemesanan</a>
           <a href="#">Pengiriman</a>
           <a href="#">Retur</a>
           <a href="#">Mitra Petani</a>
-        </div>
+        </nav>
         <div class="footer-newsletter">
           <h4>Newsletter</h4>
           <p>Dapatkan info terbaru tentang produk dan inovasi kakao.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Email Anda">
-            <button><i class="fas fa-arrow-right"></i></button>
-          </div>
+          <form class="newsletter-form">
+            <label for="newsletter-email" class="sr-only">Email untuk newsletter</label>
+            <input type="email" id="newsletter-email" placeholder="Email Anda" aria-required="true">
+            <button type="submit" aria-label="Berlangganan"><i class="fas fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
@@ -243,7 +269,7 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- BACK TO TOP -->
   <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>

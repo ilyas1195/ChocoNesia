@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <!-- SKIP TO MAIN -->
+  <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
   <!-- LOADING SCREEN -->
   <div id="loading-screen">
     <div class="loader-bean">
@@ -30,6 +33,7 @@
   </div>
 
   <!-- NAVBAR -->
+  <header>
   <nav id="navbar">
     <div class="nav-inner container">
       <a href="#hero" class="nav-logo">
@@ -51,9 +55,10 @@
       </div>
     </div>
   </nav>
+  </header>
   <div id="scroll-bar" class="scroll-bar"></div>
 
-  <div data-scroll-container id="scroll-container">
+  <main data-scroll-container id="main-content" class="scroll-container">
 
     <!-- HERO -->
     <section id="hero" class="hero">
@@ -111,16 +116,16 @@
     <section id="about" class="section about">
       <div class="container">
         <div class="about-grid">
-          <div class="about-image">
+          <figure class="about-image">
             <div class="about-img-wrapper">
-              <img src="https://cdn.britannica.com/60/190360-050-0A5E06CB/Cocoa-powder-cocoa-beans.jpg" alt="Cocoa beans"
+              <img src="https://cdn.britannica.com/60/190360-050-0A5E06CB/Cocoa-powder-cocoa-beans.jpg" alt="Biji kakao pilihan Nusantara"
                 loading="lazy">
-              <div class="about-exp-badge">
+              <figcaption class="about-exp-badge">
                 <span class="about-exp-num">12+</span>
                 <span>Tahun Pengalaman</span>
-              </div>
+              </figcaption>
             </div>
-          </div>
+          </figure>
           <div class="about-text">
             <span class="section-tag">Tentang Kami</span>
             <h2>Membangun Ekosistem Kakao Indonesia</h2>
@@ -221,9 +226,12 @@
             <div class="contact-item"><i class="fas fa-phone"></i><span>+62 812 3456 7890</span></div>
           </div>
           <form class="contact-form">
-            <input type="text" placeholder="Nama Anda" required>
-            <input type="email" placeholder="Email Anda" required>
-            <textarea rows="4" placeholder="Pesan Anda" required></textarea>
+            <label for="contact-name" class="sr-only">Nama Anda</label>
+            <input type="text" id="contact-name" placeholder="Nama Anda" aria-required="true">
+            <label for="contact-email" class="sr-only">Email Anda</label>
+            <input type="email" id="contact-email" placeholder="Email Anda" aria-required="true">
+            <label for="contact-message" class="sr-only">Pesan Anda</label>
+            <textarea id="contact-message" rows="4" placeholder="Pesan Anda" aria-required="true"></textarea>
             <button type="submit" class="btn-primary">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
           </form>
         </div>
@@ -244,28 +252,29 @@
             <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Navigasi">
           <h4>Navigasi</h4>
           <a href="#hero">Beranda</a>
           <a href="produk.html">Produk</a>
           <a href="tentang.html">Tentang</a>
           <a href="proses.html">Proses</a>
           <a href="#faq">FAQ</a>
-        </div>
-        <div class="footer-links">
+        </nav>
+        <nav class="footer-links" aria-label="Layanan">
           <h4>Layanan</h4>
           <a href="#">Pemesanan</a>
           <a href="#">Pengiriman</a>
           <a href="#">Retur</a>
           <a href="#">Mitra Petani</a>
-        </div>
+        </nav>
         <div class="footer-newsletter">
           <h4>Newsletter</h4>
           <p>Dapatkan info terbaru tentang produk dan inovasi kakao.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Email Anda">
-            <button><i class="fas fa-arrow-right"></i></button>
-          </div>
+          <form class="newsletter-form">
+            <label for="newsletter-email" class="sr-only">Email untuk newsletter</label>
+            <input type="email" id="newsletter-email" placeholder="Email Anda" aria-required="true">
+            <button type="submit" aria-label="Berlangganan"><i class="fas fa-arrow-right"></i></button>
+          </form>
         </div>
       </div>
       <div class="footer-bottom">
@@ -273,16 +282,16 @@
       </div>
     </footer>
 
-  </div>
+  </main>
 
   <!-- PRODUCT MODAL -->
-  <div id="product-modal" class="modal">
+  <dialog id="product-modal" class="modal" aria-modal="true" aria-labelledby="modal-heading">
     <div class="modal-overlay"></div>
     <div class="modal-content">
-      <button id="modal-close" class="modal-close"><i class="fas fa-times"></i></button>
+      <button id="modal-close" class="modal-close" aria-label="Tutup modal"><i class="fas fa-times"></i></button>
       <div id="modal-body"></div>
     </div>
-  </div>
+  </dialog>
 
   <!-- BACK TO TOP -->
   <button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
