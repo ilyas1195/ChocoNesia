@@ -102,7 +102,7 @@ themeToggle.addEventListener('click', (e) => {
 /* ===== LOADING + INIT ===== */
 document.body.classList.add('loading');
 setTimeout(() => {
-  if (loadingScreen) loadingScreen.classList.add('loaded');
+  loadingScreen.classList.add('loaded');
   document.body.classList.remove('loading');
 
   locoScroll = new LocomotiveScroll({
@@ -136,8 +136,6 @@ setTimeout(() => {
   observeTimeline();
 
   ScrollTrigger.refresh();
-  renderProducts();
-  setTimeout(() => locoScroll.update(), 300);
 }, 2200);
 
 /* ===== LOCOMOTIVE SCROLL HANDLER ===== */
@@ -423,9 +421,9 @@ function initCharts() {
   chartInstance = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['2019','2020','2021','2022','2023','2024'],
+      labels: ['2021','2022','2023','2024','2025','2026'],
       datasets: [{
-        label: 'Produksi (Ton)', data: [734,720,688,667,650,660],
+        label: 'Produksi (Ton)', data: [734,720,688,667,650,680],
         borderColor: '#c9956b',
         backgroundColor: (ctx) => { const g = ctx.chart.ctx.createLinearGradient(0,0,0,300); g.addColorStop(0,'rgba(201,149,107,0.3)'); g.addColorStop(1,'rgba(201,149,107,0)'); return g; },
         fill: true, tension: 0.4, pointBackgroundColor: '#c9956b',
@@ -445,23 +443,7 @@ function initCharts() {
 }
 
 /* ===== INIT ===== */
-// renderProducts();
-// setTimeout(() => {
-//   if (locoScroll) locoScroll.update();
-// }, 300);
+renderProducts();
 renderTimeline();
 renderTestimonials();
 renderFAQ();
-
-
-// PAGE TRANSITION
-document.querySelectorAll('.nav-to-produk, #btn-explore-all').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    e.preventDefault();
-    const overlay = document.getElementById('page-transition');
-    overlay.classList.add('show');
-    setTimeout(() => {
-      window.location.href = 'produk.html';
-    }, 700);
-  });
-});

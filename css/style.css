@@ -167,17 +167,13 @@ button {
   pointer-events: none;
 }
 
-/* .loader-bean {
+.loader-bean img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
   font-size: 40px;
   color: var(--accent);
   animation: loaderPulse 1s ease-in-out infinite;
-} */
-
-.loader-bean img {
-  width: 100px;           /* ← sesuaikan ukuran */
-  height: 100px;
-  object-fit: contain;
-  animation: loaderPulse 1s ease-in-out infinite;  /* animasi tetap jalan */
 }
 
 @keyframes loaderPulse {
@@ -666,7 +662,7 @@ button {
   transform: translateY(-2px);
 }
 
-
+/* button produk(jelajahi semua produk */
 .explore-btn-wrapper {
   display: flex;
   justify-content: center;
@@ -1648,7 +1644,8 @@ button {
   opacity: 0.5;
 }
 
-/* ===== PRODUK PAGE EXTRA STYLES ===== */
+
+/* ===== HALAMAN PRODUK ===== */
 .produk-hero {
   background: var(--bg-primary);
   padding: 140px 0 60px;
@@ -1689,6 +1686,7 @@ button {
 }
 
 .produk-hero h1 span { color: var(--accent); }
+
 .produk-hero p {
   color: var(--text-secondary);
   font-size: 16px;
@@ -1696,7 +1694,7 @@ button {
   margin: 0 auto;
 }
 
-/* ===== TOOLBAR (search + filter + sort) ===== */
+/* ===== TOOLBAR ===== */
 .produk-toolbar {
   background: var(--bg-secondary);
   padding: 32px 0 0;
@@ -1742,38 +1740,8 @@ button {
   transition: border-color .3s;
 }
 
-.search-box input:focus {
-  border-color: var(--accent);
-}
-
-.search-box input::placeholder {
-  color: var(--text-secondary);
-}
-
-/* .filter-tabs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  padding: 10px 20px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 600;
-  border: 1.5px solid var(--border-color);
-  color: var(--text-secondary);
-  background: var(--bg-card);
-  transition: all .3s;
-  white-space: nowrap;
-}
-
-.filter-btn:hover, 
-.filter-btn.active {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-alpha, rgba(210, 105, 30, 0.12));
-} */
+.search-box input:focus { border-color: var(--accent); }
+.search-box input::placeholder { color: var(--text-secondary); }
 
 .sort-select {
   padding: 10px 16px;
@@ -1789,9 +1757,7 @@ button {
   transition: border-color .3s;
 }
 
-.sort-select:focus {
-  border-color: var(--accent);
-}
+.sort-select:focus { border-color: var(--accent); }
 
 
 /* ===== PRODUK SECTION ===== */
@@ -1800,19 +1766,7 @@ button {
   padding: 48px 0 80px;
 }
 
-.produk-count {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 28px;
-}
-
-.produk-count span {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-
-/* ===== PRODUCT GRID & CARDS ===== */
+/* ===== OVERRIDE CARD UNTUK HALAMAN PRODUK ===== */
 #produk-grid .product-card {
   text-align: left;
   padding: 0;
@@ -1870,9 +1824,16 @@ button {
   text-align: left;
 }
 
+#produk-grid .card-stars {
+  color: #f59e0b;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
 #produk-grid .product-desc {
   font-size: 13px;
   margin-bottom: 16px;
+  text-align: left;
 }
 
 #produk-grid .card-footer {
@@ -1885,124 +1846,61 @@ button {
 #produk-grid .product-price {
   margin-bottom: 0;
   font-size: 18px;
+  display: inline;
 }
 
 #produk-grid .btn-detail {
   padding: 9px 20px;
   font-size: 13px;
+  flex-shrink: 0;
 }
 
-.card-stars {
-  color: #f59e0b;
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-
-
-/* ===== NO RESULTS ===== */
-.no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 80px 20px;
-  color: var(--text-secondary);
-}
-
-.no-results i {
-  font-size: 48px;
-  margin-bottom: 16px;
-  opacity: .4;
-  display: block;
-}
-
-.no-results h3 {
-  font-size: 20px;
-  color: var(--heading-color);
-  margin-bottom: 8px;
-}
-
-
-/* ===== WHY SECTION ===== */
-.why-section {
-  background: var(--bg-primary);
-  padding: 80px 0;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 28px;
+/* ===== PAGINATION ===== */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin-top: 48px;
+  flex-wrap: wrap;
 }
 
-.why-card {
+.page-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-color);
   background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  transition: all .3s;
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: var(--shadow-hover);
-}
-
-.why-card i {
-  font-size: 32px;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-
-.why-card h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  color: var(--heading-color);
-  margin-bottom: 8px;
-}
-
-.why-card p {
-  font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .toolbar-inner {
-    gap: 10px;
-  }
-  .search-box {
-    min-width: 100%;
-  }
-  .produk-toolbar {
-    top: 60px;
-  }
+.page-btn:hover:not(.disabled):not(.active) {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-card);
 }
 
-/* ===== PAGE TRANSITION ===== */
-.page-transition {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  pointer-events: none;
-  overflow: hidden;
+.page-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #2c1810;
+  box-shadow: 0 4px 12px rgba(201, 149, 107, 0.35);
 }
 
-.page-transition::before,
-.page-transition::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  height: 50%;
-  background: var(--bg-primary);
-  transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+.page-btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
-.page-transition::before { top: 0; transform: translateY(-100%); }
-.page-transition::after  { bottom: 0; transform: translateY(100%); }
-
-.page-transition.show::before { transform: translateY(0); }
-.page-transition.show::after  { transform: translateY(0); }
+.page-prev,
+.page-next {
+  font-size: 12px;
+}
